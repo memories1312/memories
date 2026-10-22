@@ -36,6 +36,7 @@
     root.classList.toggle('motion-enabled', active);
     root.classList.toggle('motion-paused', !active);
     control.setAttribute('aria-pressed', String(!active));
+    document.dispatchEvent(new CustomEvent('green:motion-change', { detail: { active } }));
     control.disabled = reducedMotion.matches;
     const label = reducedMotion.matches ? 'Đã giảm chuyển động' : active ? 'Dừng hiệu ứng' : 'Bật hiệu ứng';
     control.innerHTML = `<svg viewBox="0 0 16 16" aria-hidden="true">${active ? '<path d="M4 3h3v10H4zm5 0h3v10H9z"/>' : '<path d="m5 3 8 5-8 5z"/>'}</svg><span>${label}</span>`;
@@ -58,12 +59,16 @@
   });
   window.addEventListener('beforeprint', () => animations.forEach(animation => animation.cancel()));
 
-  const orbit = document.createElement('div');
-  orbit.className = 'hero-orbit';
-  orbit.setAttribute('aria-hidden', 'true');
-  select('.hero-visual').prepend(orbit);
-  selectAll('.hero-copy > *').forEach((element, index) => enter(element, index * 90, 22));
-  enter(select('.hero-visual'), 180, 30);
+  // The original split hero is optional; the full-screen carousel has its own motion.
+  const heroVisual = select('.hero-visual');
+  if (heroVisual) {
+    const orbit = document.createElement('div');
+    orbit.className = 'hero-orbit';
+    orbit.setAttribute('aria-hidden', 'true');
+    heroVisual.prepend(orbit);
+    selectAll('.hero-copy > *').forEach((element, index) => enter(element, index * 90, 22));
+    enter(heroVisual, 180, 30);
+  }
 
   const ribbon = select('.green-ribbon');
   const ribbonText = select('.ribbon-inner');
@@ -81,12 +86,12 @@
         if (!entry.isIntersecting) return;
         const element = entry.target;
         const siblings = Array.from(element.parentElement.children);
-        const stagger = element.matches('.category-card, .campus-story, .guide-item') ? siblings.indexOf(element) * 90 : 0;
+        const stagger = element.matches('.category-card, .campus-story, .guide-item, .hub-item') ? siblings.indexOf(element) * 90 : 0;
         enter(element, stagger);
         reveal.unobserve(element);
       });
     }, { threshold: .08, rootMargin: '0px 0px -30px 0px' });
-    selectAll('.section-heading, .category-card, .special-note, .lookup-copy, .lookup-box, .quiz-board, .campus-story, .campus-social, .guide-item, .action-panel, .faq-section > div, .footer-main').forEach(element => reveal.observe(element));
+    selectAll('.intro-heading, .hub-item, .campus-filters, .section-heading, .category-card, .special-note, .lookup-copy, .lookup-box, .quiz-board, .campus-story, .campus-social, .guide-item, .action-panel, .faq-section > div, .footer-main').forEach(element => reveal.observe(element));
     const loops = new IntersectionObserver(entries => {
       entries.forEach(entry => entry.target.classList.toggle('motion-in-view', entry.isIntersecting));
     }, { rootMargin: '40px' });

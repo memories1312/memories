@@ -13,12 +13,14 @@
   <meta property="og:image" content="https://memories1312.github.io/memories/assets/hutech-chu-nhat-xanh.jpg">
   <title>HUTECH University Green Campus | Phân loại nhỏ. Thay đổi lớn.</title>
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='18' fill='%23174d35'/%3E%3Cpath d='M18 40C12 15 44 12 48 16c0 24-15 33-30 24Z' fill='%23d9ed9d'/%3E%3Cpath d='m17 48 22-24' stroke='%23174d35' stroke-width='4' fill='none'/%3E%3C/svg%3E">
-  <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="motion.css">
-  <script src="app.js" defer></script>
-  <script src="motion.js" defer></script>
+  <link rel="stylesheet" href="styles.css?v=20261021b">
+  <link rel="stylesheet" href="motion.css?v=20261021b">
+  <link rel="stylesheet" href="campus.css?v=20261021b">
+  <script src="app.js?v=20261021b" defer></script>
+  <script src="motion.js?v=20261021b" defer></script>
+  <script src="campus.js?v=20261021b" defer></script>
 </head>
-<body>
+<body class="campus-theme">
 <svg class="icon-defs" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs>
   <symbol id="i-leaf" viewBox="0 0 24 24"><path d="M5 16C1 5 15 3 21 3c0 12-6 18-16 13Z"/><path d="m3 21 12-12"/></symbol>
   <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h16m-6-6 6 6-6 6"/></symbol>
@@ -35,7 +37,7 @@
 <a class="skip-link" href="#noi-dung">Đến nội dung chính</a>
 <header class="site-header">
   <div class="nav-wrap container">
-    <a class="brand wordmark-brand" href="#" aria-label="HUTECH University Green Campus — về đầu trang"><img src="assets/wordmark-green.svg" width="166" height="76" alt="GREEN — Hutech University — CAMPUS"></a>
+    <a class="brand wordmark-brand" href="#" aria-label="HUTECH University Green Campus — về đầu trang"><img class="brand-day" src="assets/wordmark-green.svg" width="166" height="76" alt="GREEN — Hutech University — CAMPUS"><img class="brand-night" src="assets/wordmark-white.svg" width="166" height="76" alt="" aria-hidden="true"></a>
     <nav id="main-nav" aria-label="Điều hướng chính">
       <a href="#phan-loai">Hiểu về phân loại</a><a href="#tra-cuu">Tra cứu rác</a><a href="#thu-thach">Thử thách xanh</a><a href="#goc-xanh">Góc xanh HUTECH</a><a href="#cam-nang">Cẩm nang</a>
     </nav>
@@ -44,22 +46,61 @@
   </div>
 </header>
 <main id="noi-dung">
-  <section class="hero container" aria-labelledby="hero-title">
-    <div class="hero-copy">
-      <div class="eyebrow"><span class="live-dot"></span> HUTECH UNIVERSITY · GREEN CAMPUS</div>
-      <h1 id="hero-title">Phân loại nhỏ.<br><span>Thay đổi lớn.</span><svg class="hero-leaf" aria-hidden="true"><use href="#i-leaf"/></svg></h1>
-      <p class="hero-description">Cùng cộng đồng sinh viên HUTECH biến việc phân loại rác thành thói quen. Từ giảng đường đến nơi bạn sống, một hành động nhỏ hôm nay sẽ mở đầu cho hành trình xanh hơn.</p>
-      <div class="hero-actions"><a class="button" href="#phan-loai">Cùng phân loại <svg class="icon"><use href="#i-arrow"/></svg></a><a class="text-button" href="#thu-thach"><span class="play-icon">▶</span> Thử tài phân loại</a></div>
-      <div class="hero-note"><span class="note-mark">♻</span><p>Không cần hoàn hảo.<br><strong>Chỉ cần bắt đầu từ một món rác.</strong></p></div>
+  <section class="campus-hero" aria-label="Hành trình HUTECH Green Campus" aria-roledescription="trình chiếu">
+    <div class="hero-slides" id="hero-slides">
+      <article class="campus-slide is-active" id="campus-slide-1" role="group" aria-roledescription="trang chiếu" aria-label="1 trên 3: Phân loại nhỏ, thay đổi lớn">
+        <div class="slide-media"><img src="assets/hutech-chu-nhat-xanh.jpg" width="713" height="534" fetchpriority="high" alt="Sinh viên HUTECH chung tay trong hoạt động Ngày Chủ Nhật Xanh"></div>
+        <div class="slide-shade"></div>
+        <div class="container slide-content">
+          <p class="slide-eyebrow"><span></span> HUTECH UNIVERSITY GREEN CAMPUS</p>
+          <h1>PHÂN LOẠI NHỎ.<br><em>THAY ĐỔI LỚN.</em></h1>
+          <p class="slide-description">Một chiếc chai đúng chỗ. Một thói quen tốt mỗi ngày.<br> Cùng sinh viên HUTECH viết tiếp hành trình sống xanh.</p>
+          <div class="slide-actions"><a class="button hero-primary" href="#phan-loai">Khám phá cách phân loại <svg class="icon"><use href="#i-arrow"/></svg></a><a class="hero-secondary" href="#thu-thach"><span>▶</span> Thử tài ngay</a></div>
+        </div>
+      </article>
+      <article class="campus-slide" id="campus-slide-2" role="group" aria-roledescription="trang chiếu" aria-label="2 trên 3: Giữ lại giá trị" aria-hidden="true" inert>
+        <div class="slide-media"><img src="assets/hutech-tai-che.jpg" width="713" height="475" alt="Sinh viên HUTECH tham gia chương trình Chai nhựa tái sinh, Hành trình tiếp nối"></div>
+        <div class="slide-shade"></div>
+        <div class="container slide-content">
+          <p class="slide-eyebrow"><span></span> CHO VẬT LIỆU MỘT HÀNH TRÌNH MỚI</p>
+          <h2>GIỮ LẠI GIÁ TRỊ.<br><em>GỬI TIẾP MÀU XANH.</em></h2>
+          <p class="slide-description">Từ chai nhựa, lon nhôm đến tờ giấy đã dùng.<br> Hiểu đúng vật liệu để mỗi món đồ có thêm một cơ hội.</p>
+          <div class="slide-actions"><a class="button hero-primary" href="#tra-cuu">Tra cứu món rác của bạn <svg class="icon"><use href="#i-search"/></svg></a><a class="hero-secondary" href="#goc-xanh">Câu chuyện HUTECH ↗</a></div>
+        </div>
+      </article>
+      <article class="campus-slide" id="campus-slide-3" role="group" aria-roledescription="trang chiếu" aria-label="3 trên 3: Bảy ngày sống xanh" aria-hidden="true" inert>
+        <div class="slide-media slide-media-community"><img src="assets/hutech-nextgen.jpg" width="713" height="950" alt="Các hoạt động giáo dục môi trường và thu gom vật liệu của dự án NextGen Impact"></div>
+        <div class="slide-shade"></div>
+        <div class="container slide-content">
+          <p class="slide-eyebrow"><span></span> MỖI NGÀY MỘT HÀNH ĐỘNG NHỎ</p>
+          <h2>7 NGÀY SỐNG XANH.<br><em>BẮT ĐẦU TỪ BẠN.</em></h2>
+          <p class="slide-description">Mang theo bình nước. Giữ riêng pin cũ. Chia sẻ điều vừa học.<br> Biến những điều giản dị thành thói quen của chính mình.</p>
+          <div class="slide-actions"><a class="button hero-primary" href="#hanh-dong">Tham gia 7 ngày xanh <svg class="icon"><use href="#i-arrow"/></svg></a><a class="hero-secondary" href="#cam-nang">Mở cẩm nang ↗</a></div>
+        </div>
+      </article>
     </div>
-    <div class="hero-visual">
-      <div class="photo-frame"><img src="assets/hutech-chu-nhat-xanh.jpg" width="713" height="534" fetchpriority="high" alt="Đoàn viên HUTECH tham gia hoạt động Ngày Chủ Nhật Xanh, theo hình ảnh do Đoàn Thanh niên HUTECH công bố"><span class="photo-topline">HUTECH GREEN CAMPUS · TOGETHER, GREENER.</span><div class="photo-message"><span class="photo-icon">↗</span><div>Từ những người trẻ.<br><strong>Lan tỏa những điều xanh.</strong></div></div></div>
-      <div class="round-sticker" aria-hidden="true"><svg class="icon"><use href="#i-recycle"/></svg><span>GIỮ LẠI<br>GIÁ TRỊ</span></div>
-      <p class="photo-caption">Ảnh: <a href="https://www.hutech.edu.vn/doantn/doan-thanh-nien-thong-bao-nam-2023-2024/14621325-tuoi-tre-hutech-thuc-hien-ngay-chu-nhat-xanh-lan-thu-155" target="_blank" rel="noopener noreferrer">Đoàn Thanh niên – Hội Sinh viên HUTECH ↗</a></p>
+    <div class="container hero-bottom">
+      <a class="scroll-cue" href="#kham-pha"><span class="scroll-cue-icon">↓</span><span>CUỘN ĐỂ KHÁM PHÁ</span></a>
+      <div class="hero-controls" aria-label="Điều khiển banner">
+        <span class="slide-count" aria-hidden="true"><b id="slide-current">01</b><span> / 03</span></span>
+        <div class="slide-dots"><button type="button" class="slide-dot is-active" data-slide="0" aria-label="Xem cảnh 1: Phân loại nhỏ" aria-controls="campus-slide-1" aria-current="true"><span></span></button><button type="button" class="slide-dot" data-slide="1" aria-label="Xem cảnh 2: Giữ lại giá trị" aria-controls="campus-slide-2"><span></span></button><button type="button" class="slide-dot" data-slide="2" aria-label="Xem cảnh 3: Bảy ngày sống xanh" aria-controls="campus-slide-3"><span></span></button></div>
+        <button class="hero-arrow" id="hero-prev" type="button" aria-label="Cảnh trước">←</button><button class="hero-arrow" id="hero-next" type="button" aria-label="Cảnh tiếp theo">→</button><button class="hero-play" id="hero-play" type="button" aria-label="Dừng tự chuyển banner" aria-pressed="false"><span aria-hidden="true">Ⅱ</span></button>
+      </div>
     </div>
+    <p class="slide-source">Ảnh hoạt động từ HUTECH · <a href="#goc-xanh">Xem bài gốc ↗</a></p>
+    <div class="hero-live sr-only" aria-live="polite" aria-atomic="true"></div>
   </section>
   <div class="green-ribbon" aria-label="Giảm thiểu, tái sử dụng, phân loại, tái chế"><div class="container ribbon-inner"><span>GIẢM THIỂU</span><b>✳</b><span>TÁI SỬ DỤNG</span><b>✳</b><span>PHÂN LOẠI</span><b>✳</b><span>TÁI CHẾ</span><b>✳</b><span class="ribbon-end">SỐNG XANH TỪ GỐC</span></div></div>
 
+  <section id="kham-pha" class="campus-intro section container" aria-labelledby="intro-title">
+    <div class="intro-heading"><p class="eyebrow">CÙNG NHAU, TỪ MỘT ĐIỀU NHỎ</p><h2 id="intro-title">MỘT CAMPUS XANH.<br><span>BẮT ĐẦU TỪ CHÚNG TA.</span></h2><p>Không cần chờ một thay đổi lớn. Học cách phân loại, thử sức với những món đồ quen thuộc và mang một thói quen tốt vào mỗi ngày.</p></div>
+    <div class="green-hub">
+      <a class="hub-item" href="#phan-loai"><span class="hub-icon"><svg class="icon"><use href="#i-recycle"/></svg><i>01</i></span><strong><span data-count="3">3</span> nhóm rác</strong><p>Hiểu đúng để phân loại</p><span class="hub-link">Bắt đầu tìm hiểu ↗</span></a>
+      <a class="hub-item" href="#tra-cuu"><span class="hub-icon"><svg class="icon"><use href="#i-search"/></svg><i>02</i></span><strong><span data-count="20">20</span> vật dụng</strong><p>Tra cứu cách xử lý</p><span class="hub-link">Tìm món rác của bạn ↗</span></a>
+      <a class="hub-item" href="#thu-thach"><span class="hub-icon"><svg class="icon"><use href="#i-check"/></svg><i>03</i></span><strong><span data-count="6">6</span> câu hỏi</strong><p>Thử sức, nhớ lâu hơn</p><span class="hub-link">Chơi thử thách ↗</span></a>
+      <a class="hub-item" href="#hanh-dong"><span class="hub-icon"><svg class="icon"><use href="#i-leaf"/></svg><i>04</i></span><strong><span data-count="7">7</span> ngày xanh</strong><p>Nuôi dưỡng thói quen tốt</p><span class="hub-link">Hành động hôm nay ↗</span></a>
+    </div>
+  </section>
   <section id="phan-loai" class="section container" aria-labelledby="sort-title">
     <div class="section-heading"><div><div class="eyebrow">01 / HIỂU ĐÚNG TỪ ĐẦU</div><h2 id="sort-title">Ba nhóm rác.<br>Một cách bắt đầu dễ hơn.</h2></div><p>Đừng nhìn mỗi màu thùng.<br>Hãy nhìn vào loại rác và hướng dẫn thu gom.</p></div>
     <div class="category-grid">
@@ -81,10 +122,11 @@
   <section id="goc-xanh" class="section campus-section" aria-labelledby="campus-title">
     <div class="container">
       <div class="section-heading"><div><div class="eyebrow">GÓC XANH HUTECH / CÂU CHUYỆN CÓ THẬT</div><h2 id="campus-title">Hành động xanh.<br>Dấu ấn sinh viên.</h2></div><p>Những hoạt động môi trường được HUTECH chia sẻ.<br>Chạm vào mỗi câu chuyện để xem nguồn gốc.</p></div>
+      <div class="campus-filters" role="group" aria-label="Lọc câu chuyện HUTECH"><button class="is-active" data-story-filter="all" aria-pressed="true">Tất cả câu chuyện</button><button data-story-filter="community" aria-pressed="false">Cộng đồng</button><button data-story-filter="recycle" aria-pressed="false">Tái chế</button><button data-story-filter="education" aria-pressed="false">Giáo dục</button><span id="story-count" class="sr-only" role="status">3 câu chuyện</span></div>
       <div class="campus-grid">
-        <article class="campus-story"><a class="campus-photo" href="https://www.hutech.edu.vn/doantn/doan-thanh-nien-thong-bao-nam-2023-2024/14621325-tuoi-tre-hutech-thuc-hien-ngay-chu-nhat-xanh-lan-thu-155" target="_blank" rel="noopener noreferrer" aria-label="Xem bài Ngày Chủ Nhật Xanh trên website HUTECH"><img src="assets/hutech-chu-nhat-xanh.jpg" width="713" height="534" loading="lazy" alt="Đoàn viên HUTECH cùng tham gia Ngày Chủ Nhật Xanh"><span>HOẠT ĐỘNG CỘNG ĐỒNG ↗</span></a><div class="campus-story-body"><div class="story-date">BÀI ĐĂNG · 22.09.2024</div><h3><a href="https://www.hutech.edu.vn/doantn/doan-thanh-nien-thong-bao-nam-2023-2024/14621325-tuoi-tre-hutech-thuc-hien-ngay-chu-nhat-xanh-lan-thu-155" target="_blank" rel="noopener noreferrer">Tuổi trẻ HUTECH cùng Ngày Chủ Nhật Xanh</a></h3><p>Thu gom rác, làm sạch không gian công cộng và lan tỏa thói quen bảo vệ môi trường trong cộng đồng.</p><a class="story-source" href="https://www.hutech.edu.vn/doantn/doan-thanh-nien-thong-bao-nam-2023-2024/14621325-tuoi-tre-hutech-thuc-hien-ngay-chu-nhat-xanh-lan-thu-155" target="_blank" rel="noopener noreferrer">Nguồn ảnh &amp; bài: Đoàn – Hội HUTECH <span>↗</span></a></div></article>
-        <article class="campus-story"><a class="campus-photo" href="https://www.hutech.edu.vn/homepage/hoat-dong-sinh-vien/14635411-hutech-ers-gop-chai-nhua-gop-them-yeu-thuong-cho-cong-dong" target="_blank" rel="noopener noreferrer" aria-label="Xem bài Chai nhựa tái sinh trên website HUTECH"><img src="assets/hutech-tai-che.jpg" width="713" height="475" loading="lazy" alt="Sinh viên HUTECH tại hoạt động Chai nhựa tái sinh, Hành trình tiếp nối"><span>PHÂN LOẠI &amp; TÁI CHẾ ↗</span></a><div class="campus-story-body"><div class="story-date">BÀI ĐĂNG · 24.09.2026</div><h3><a href="https://www.hutech.edu.vn/homepage/hoat-dong-sinh-vien/14635411-hutech-ers-gop-chai-nhua-gop-them-yeu-thuong-cho-cong-dong" target="_blank" rel="noopener noreferrer">Góp chai nhựa, tiếp nối hành trình xanh</a></h3><p>Sinh viên HUTECH tham gia chương trình khuyến khích thu gom chai nhựa, lon nhôm và hình thành thói quen phân loại.</p><a class="story-source" href="https://www.hutech.edu.vn/homepage/hoat-dong-sinh-vien/14635411-hutech-ers-gop-chai-nhua-gop-them-yeu-thuong-cho-cong-dong" target="_blank" rel="noopener noreferrer">Nguồn ảnh: Tổ Media – HUTECH <span>↗</span></a></div></article>
-        <article class="campus-story"><a class="campus-photo photo-collage" href="https://www.hutech.edu.vn/khoakhxhqhcc/hoat-dong-sinh-vien/14635413-du-an-nextgen-impact-hanh-trinh-ket-noi-sinh-vien-3-quoc-gia-qua-cac-hoat-dong-phat-trien-ben-vung-d" target="_blank" rel="noopener noreferrer" aria-label="Xem bài NextGen Impact trên website HUTECH"><img src="assets/hutech-nextgen.jpg" width="713" height="950" loading="lazy" alt="Hoạt động giáo dục môi trường và thu gom giấy, pin, rác điện tử trong dự án NextGen Impact"><span>GIÁO DỤC MÔI TRƯỜNG ↗</span></a><div class="campus-story-body"><div class="story-date">BÀI ĐĂNG · 24.09.2026</div><h3><a href="https://www.hutech.edu.vn/khoakhxhqhcc/hoat-dong-sinh-vien/14635413-du-an-nextgen-impact-hanh-trinh-ket-noi-sinh-vien-3-quoc-gia-qua-cac-hoat-dong-phat-trien-ben-vung-d" target="_blank" rel="noopener noreferrer">NextGen Impact: từ kiến thức đến hành động</a></h3><p>Sinh viên PR HUTECH đồng hành cùng học sinh tìm hiểu môi trường, thu gom giấy cũ, pin và rác điện tử.</p><a class="story-source" href="https://www.hutech.edu.vn/khoakhxhqhcc/hoat-dong-sinh-vien/14635413-du-an-nextgen-impact-hanh-trinh-ket-noi-sinh-vien-3-quoc-gia-qua-cac-hoat-dong-phat-trien-ben-vung-d" target="_blank" rel="noopener noreferrer">Nguồn ảnh &amp; bài: Khoa KHXH &amp; QHCC <span>↗</span></a></div></article>
+        <article class="campus-story" data-story="community"><a class="campus-photo" href="https://www.hutech.edu.vn/doantn/doan-thanh-nien-thong-bao-nam-2023-2024/14621325-tuoi-tre-hutech-thuc-hien-ngay-chu-nhat-xanh-lan-thu-155" target="_blank" rel="noopener noreferrer" aria-label="Xem bài Ngày Chủ Nhật Xanh trên website HUTECH"><img src="assets/hutech-chu-nhat-xanh.jpg" width="713" height="534" loading="lazy" alt="Đoàn viên HUTECH cùng tham gia Ngày Chủ Nhật Xanh"><span>HOẠT ĐỘNG CỘNG ĐỒNG ↗</span></a><div class="campus-story-body"><div class="story-date">BÀI ĐĂNG · 22.09.2024</div><h3><a href="https://www.hutech.edu.vn/doantn/doan-thanh-nien-thong-bao-nam-2023-2024/14621325-tuoi-tre-hutech-thuc-hien-ngay-chu-nhat-xanh-lan-thu-155" target="_blank" rel="noopener noreferrer">Tuổi trẻ HUTECH cùng Ngày Chủ Nhật Xanh</a></h3><p>Thu gom rác, làm sạch không gian công cộng và lan tỏa thói quen bảo vệ môi trường trong cộng đồng.</p><a class="story-source" href="https://www.hutech.edu.vn/doantn/doan-thanh-nien-thong-bao-nam-2023-2024/14621325-tuoi-tre-hutech-thuc-hien-ngay-chu-nhat-xanh-lan-thu-155" target="_blank" rel="noopener noreferrer">Nguồn ảnh &amp; bài: Đoàn – Hội HUTECH <span>↗</span></a></div></article>
+        <article class="campus-story" data-story="recycle"><a class="campus-photo" href="https://www.hutech.edu.vn/homepage/hoat-dong-sinh-vien/14635411-hutech-ers-gop-chai-nhua-gop-them-yeu-thuong-cho-cong-dong" target="_blank" rel="noopener noreferrer" aria-label="Xem bài Chai nhựa tái sinh trên website HUTECH"><img src="assets/hutech-tai-che.jpg" width="713" height="475" loading="lazy" alt="Sinh viên HUTECH tại hoạt động Chai nhựa tái sinh, Hành trình tiếp nối"><span>PHÂN LOẠI &amp; TÁI CHẾ ↗</span></a><div class="campus-story-body"><div class="story-date">BÀI ĐĂNG · 24.09.2026</div><h3><a href="https://www.hutech.edu.vn/homepage/hoat-dong-sinh-vien/14635411-hutech-ers-gop-chai-nhua-gop-them-yeu-thuong-cho-cong-dong" target="_blank" rel="noopener noreferrer">Góp chai nhựa, tiếp nối hành trình xanh</a></h3><p>Sinh viên HUTECH tham gia chương trình khuyến khích thu gom chai nhựa, lon nhôm và hình thành thói quen phân loại.</p><a class="story-source" href="https://www.hutech.edu.vn/homepage/hoat-dong-sinh-vien/14635411-hutech-ers-gop-chai-nhua-gop-them-yeu-thuong-cho-cong-dong" target="_blank" rel="noopener noreferrer">Nguồn ảnh: Tổ Media – HUTECH <span>↗</span></a></div></article>
+        <article class="campus-story" data-story="education"><a class="campus-photo photo-collage" href="https://www.hutech.edu.vn/khoakhxhqhcc/hoat-dong-sinh-vien/14635413-du-an-nextgen-impact-hanh-trinh-ket-noi-sinh-vien-3-quoc-gia-qua-cac-hoat-dong-phat-trien-ben-vung-d" target="_blank" rel="noopener noreferrer" aria-label="Xem bài NextGen Impact trên website HUTECH"><img src="assets/hutech-nextgen.jpg" width="713" height="950" loading="lazy" alt="Hoạt động giáo dục môi trường và thu gom giấy, pin, rác điện tử trong dự án NextGen Impact"><span>GIÁO DỤC MÔI TRƯỜNG ↗</span></a><div class="campus-story-body"><div class="story-date">BÀI ĐĂNG · 24.09.2026</div><h3><a href="https://www.hutech.edu.vn/khoakhxhqhcc/hoat-dong-sinh-vien/14635413-du-an-nextgen-impact-hanh-trinh-ket-noi-sinh-vien-3-quoc-gia-qua-cac-hoat-dong-phat-trien-ben-vung-d" target="_blank" rel="noopener noreferrer">NextGen Impact: từ kiến thức đến hành động</a></h3><p>Sinh viên PR HUTECH đồng hành cùng học sinh tìm hiểu môi trường, thu gom giấy cũ, pin và rác điện tử.</p><a class="story-source" href="https://www.hutech.edu.vn/khoakhxhqhcc/hoat-dong-sinh-vien/14635413-du-an-nextgen-impact-hanh-trinh-ket-noi-sinh-vien-3-quoc-gia-qua-cac-hoat-dong-phat-trien-ben-vung-d" target="_blank" rel="noopener noreferrer">Nguồn ảnh &amp; bài: Khoa KHXH &amp; QHCC <span>↗</span></a></div></article>
       </div>
       <div class="campus-social"><div><span class="social-mark">f</span><div><strong>Kết nối thêm những câu chuyện HUTECH</strong><p>Theo dõi bài viết gốc trên fanpage của trường và tìm hiểu các hoạt động môi trường.</p></div></div><a class="text-button" href="https://www.facebook.com/hutechuniversity/" target="_blank" rel="noopener noreferrer">Facebook HUTECH <svg class="icon"><use href="#i-up"/></svg></a></div>
     </div>
@@ -97,6 +139,7 @@
   <section class="section container faq-section" aria-labelledby="faq-title"><div><div class="eyebrow">CÒN MỘT CHÚT BĂN KHOĂN?</div><h2 id="faq-title">Hỏi nhỏ.<br>Hiểu thêm.</h2><p>Những câu hỏi thường gặp khi bắt đầu phân loại.</p></div><div class="faq-list"><details><summary>Có cần nhớ màu thùng rác không?<span>+</span></summary><p>Màu sắc và cách bố trí thùng có thể khác nhau. Hãy ưu tiên tên nhóm rác, hình hướng dẫn và yêu cầu của đơn vị thu gom tại nơi bạn sống.</p></details><details><summary>Chai nhựa nào cũng tái chế được phải không?<span>+</span></summary><p>Không phải mọi loại nhựa đều được mọi điểm thu gom nhận. Kiểm tra vật liệu và tình trạng chai, loại bỏ chất còn chứa bên trong rồi hỏi nơi tiếp nhận. Bao bì từng đựng hóa chất nguy hại cần xử lý riêng.</p></details><details><summary>Nơi ở chưa có thùng phân loại thì sao?<span>+</span></summary><p>Bạn có thể bắt đầu bằng các túi hoặc hộp có nhãn. Giữ riêng đồ tái chế khô sạch và pin cũ, đồng thời hỏi ban quản lý hoặc đơn vị thu gom về phương án chuyển giao.</p></details><details><summary>Thông tin và hình ảnh trên trang lấy từ đâu?<span>+</span></summary><p>Khung ba nhóm rác tham khảo hướng dẫn kỹ thuật được đăng trên Cổng thông tin Bộ Công Thương. Các ví dụ có mục đích giáo dục; cách thu gom cụ thể cần theo hướng dẫn địa phương. <a href="https://moit.gov.vn/bao-ve-moi-truong/huong-dan-ky-thuat-ve-phan-loai-chat-thai-ran-sinh-hoat-phat-sinh-tu-ho-gia-dinh-ca-nhan.html" target="_blank" rel="noopener noreferrer">Đọc nguồn tham khảo ↗</a> Hình ảnh hoạt động được dẫn từ website HUTECH; liên kết bài gốc nằm ngay dưới từng ảnh. Logo tên dự án được thiết kế theo mẫu bạn cung cấp.</p></details></div></section>
 </main>
 <footer><div class="container footer-main"><div><a class="brand wordmark-brand" href="#" aria-label="HUTECH University Green Campus — về đầu trang"><img src="assets/wordmark-green.svg" width="196" height="90" alt="GREEN — Hutech University — CAMPUS"></a><p>Phân loại nhỏ. Thay đổi lớn.<br>Dự án truyền thông về môi trường dành cho cộng đồng sinh viên.</p></div><div class="footer-links"><a href="#phan-loai">Học phân loại</a><a href="#goc-xanh">Góc xanh HUTECH</a><a href="https://www.facebook.com/hutechuniversity/" target="_blank" rel="noopener noreferrer">Facebook HUTECH ↗</a></div></div><div class="container footer-bottom"><span>© 2026 HUTECH University Green Campus · Dự án truyền thông sinh viên.</span><span>Hình ảnh: <a href="https://www.hutech.edu.vn/doantn/doan-thanh-nien-thong-bao-nam-2023-2024/14621325-tuoi-tre-hutech-thuc-hien-ngay-chu-nhat-xanh-lan-thu-155" id="photo-credit" target="_blank" rel="noopener noreferrer">Kênh thông tin HUTECH</a> · Nguồn gốc dưới từng ảnh.</span></div></footer>
+<a class="back-to-top" href="#noi-dung" aria-label="Về đầu trang" hidden>↑</a>
 <div id="toast" class="toast" role="status" hidden></div>
 <dialog id="share-dialog" class="share-dialog"><button id="close-share" class="close-dialog" aria-label="Đóng"><svg class="icon"><use href="#i-close"/></svg></button><span class="dialog-leaf">♻</span><h2>Gửi một điều xanh.</h2><p>Sao chép lời nhắn dưới đây để chia sẻ cùng bạn bè.</p><textarea id="share-text" rows="5" readonly aria-label="Nội dung chia sẻ"></textarea><button id="copy-share" class="button">Sao chép lời nhắn <svg class="icon"><use href="#i-share"/></svg></button></dialog>
 </body>
